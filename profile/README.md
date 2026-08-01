@@ -20,9 +20,8 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 |---|---|
 | [engine](https://github.com/Templetry/engine) | The core: a pure Go library + CLI that renders repositories from compilable templates |
 | [catalog](https://github.com/Templetry/catalog) | The default template registry (`registry.json`) |
-| [kmp-native-base](https://github.com/Templetry/kmp-native-base) | Template: Kotlin Multiplatform base — Android + Desktop + iOS, modular clean architecture |
-| [android-native-base](https://github.com/Templetry/android-native-base) | Template: Android native base — modular clean architecture, Compose |
-| [compose-multiplatform-app](https://github.com/Templetry/compose-multiplatform-app) | Template: Compose Multiplatform app — Android, iOS, Desktop and Web |
+| [kmp](https://github.com/Templetry/kmp) | Parent: Kotlin Multiplatform — forms `modular-features`, `single-module` (+ `modular-ui` planned) |
+| [android](https://github.com/Templetry/android) | Parent: Android native — form `modular-features` (+ `single-module` planned) |
 | [wiki](https://github.com/Templetry/wiki) | Studies, Architecture Decision Records, and the normative `template.yml` spec |
 
 ## Roadmap
