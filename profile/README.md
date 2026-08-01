@@ -19,6 +19,7 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 | Repo | What it is |
 |---|---|
 | [wiki](https://github.com/Templetry/wiki) | Preliminary study, Architecture Decision Records, and the evolving `template.yml` spec |
+| [engine](https://github.com/Templetry/engine) | The core: a pure Go library + CLI that renders repositories from compilable templates |
 
 ## Roadmap
 
