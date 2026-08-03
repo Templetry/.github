@@ -1,3 +1,5 @@
+<img src="profile/logo.svg" width="96" alt="Templetry — five brass warp threads crossed by a linen weft" />
+
 # Templetry
 
 **Project scaffolding for every platform — delivered to any forge.**
@@ -22,7 +24,8 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 | [catalog](https://github.com/Templetry/catalog) | The default template registry (`registry.json`) |
 | [kmp](https://github.com/Templetry/kmp) | Parent: Kotlin Multiplatform — forms `modular-features`, `single-module` (+ `modular-ui` planned) |
 | [android](https://github.com/Templetry/android) | Parent: Android native — form `modular-features` (+ `single-module` planned) |
-| [wiki](https://github.com/Templetry/wiki) | Studies, Architecture Decision Records, and the normative `template.yml` spec |
+| [desktop](https://github.com/Templetry/desktop) | Native desktop app: sign in with GitHub, browse the catalog, create and manage repos |
+| [wiki](https://github.com/Templetry/wiki) | Studies, ADRs, the normative `template.yml` spec and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
 
 ## Roadmap
 
