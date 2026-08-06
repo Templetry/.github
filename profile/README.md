@@ -1,4 +1,4 @@
-<img src="profile/logo.svg" width="96" alt="Templetry — five brass warp threads crossed by a linen weft" />
+<img src="logo.svg" width="96" alt="Templetry — five brass warp threads crossed by a linen weft" />
 
 # Templetry
 
@@ -16,17 +16,18 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 
 ## Status
 
-🏗️ **Phase 0 — design & study.** The project is being designed in the open before any code lands.
+🚀 **Shipped (August 2026).** Engine [v0.2.2](https://github.com/Templetry/engine/releases/latest) with binary releases for every platform · **Templetry Desktop** [v0.2.0](https://github.com/Templetry/desktop/releases/latest) · a CI-verified template catalog. The full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
 
 | Repo | What it is |
 |---|---|
 | [engine](https://github.com/Templetry/engine) | The core: a pure Go library + CLI that renders repositories from compilable templates |
 | [catalog](https://github.com/Templetry/catalog) | The default template registry (`registry.json`) |
-| [kmp](https://github.com/Templetry/kmp) | Parent: Kotlin Multiplatform — forms `modular-features`, `single-module` (+ `modular-ui` planned) |
+| [kmp](https://github.com/Templetry/kmp) | Parent: Kotlin Multiplatform — forms `modular-features`, `single-module`, `modular-ui` |
 | [android](https://github.com/Templetry/android) | Parent: Android native — form `modular-features` (+ `single-module` planned) |
-| [desktop](https://github.com/Templetry/desktop) | Native desktop app: sign in with GitHub, browse the catalog, create and manage repos |
+| [meta](https://github.com/Templetry/meta) | Parent: the template that creates Templetry templates |
+| [desktop](https://github.com/Templetry/desktop) | Native desktop app: sign in with GitHub, browse the catalog, create, manage and update repos |
 | [wiki](https://github.com/Templetry/wiki) | Studies, ADRs, the normative `template.yml` spec and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
 
 ## Roadmap
 
-Engine (library + CLI) → container-based verification + first templates → web app (OAuth, catalog, one-click repo creation) → multi-forge adapters & template updates.
+Shipped: engine + CLI → CI-verified templates (parents/forms/features) → desktop app with template updates (three-way merge) and auto-update. Next: `android/single-module`, engine `verify` in Docker, code signing, macOS/Linux desktop builds.
