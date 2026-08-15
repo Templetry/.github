@@ -11,13 +11,13 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 ## What makes it different
 
 - **Templates compile.** Every template is a real project whose CI renders *and builds* its output — never a skeleton full of broken placeholders. Defects surface in the template's CI, not in your project.
-- **The engine doesn't know what a framework is.** All framework knowledge lives in each template's `template.yml`. Eleven ecosystems in, the engine has never needed a framework-specific line.
+- **The engine doesn't know what a framework is.** All framework knowledge lives in each template's `template.yml`. Twelve ecosystems in, the engine has never needed a framework-specific line.
 - **Projects stay alive.** Generated repositories record what made them, so they can pull template updates through a real three-way merge — and adopt **lazy pieces** (RBAC, audit trail, API keys, a whole CRUD entity) whenever you need them.
 - **Any forge.** Accounts for GitHub, GitLab and Gitea/Forgejo, plus a bring-your-own-remote fallback that covers every git host on the planet.
 
 ## Status
 
-🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.10.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.8.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **25 forms and 14 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.10.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.8.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **26 forms and 14 pieces across twelve ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
 
 ## Getting started
 
@@ -47,7 +47,7 @@ Full documentation: the wiki's [**usage guides**](https://github.com/Templetry/w
 | [go](https://github.com/Templetry/go) | Parent: CLI, HTTP service and a REST API over SQLite (+ pieces) |
 | [rust](https://github.com/Templetry/rust) | Parent: clap CLI and axum service |
 | [node](https://github.com/Templetry/node) · [jvm](https://github.com/Templetry/jvm) · [dotnet](https://github.com/Templetry/dotnet) | Parents: Express/Fastify/NestJS APIs, Spring Boot and Ktor, .NET minimal APIs and Razor Pages |
-| [kmp](https://github.com/Templetry/kmp) · [android](https://github.com/Templetry/android) | Parents: Kotlin Multiplatform and Android native |
+| [kmp](https://github.com/Templetry/kmp) · [android](https://github.com/Templetry/android) · [ios](https://github.com/Templetry/ios) | Parents: Kotlin Multiplatform, Android native and SwiftUI |
 | [meta](https://github.com/Templetry/meta) | Parent: the template that creates Templetry templates |
 | [pieces](https://github.com/Templetry/pieces) | Common pieces adoptable by any compatible project |
 | [scoop-bucket](https://github.com/Templetry/scoop-bucket) | Windows install: `scoop install templetry` |
