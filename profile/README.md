@@ -17,7 +17,7 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 
 ## Status
 
-🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.9.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.6.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **21 forms and 14 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.9.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.6.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **22 forms and 14 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
 
 ## Getting started
 
@@ -46,7 +46,7 @@ Full documentation: the wiki's [**usage guides**](https://github.com/Templetry/w
 | [python](https://github.com/Templetry/python) | Parent: FastAPI services, a user-management API and Typer CLIs (+ industrial pieces) |
 | [go](https://github.com/Templetry/go) | Parent: CLI, HTTP service and a REST API over SQLite (+ pieces) |
 | [rust](https://github.com/Templetry/rust) | Parent: clap CLI and axum service |
-| [node](https://github.com/Templetry/node) · [jvm](https://github.com/Templetry/jvm) · [dotnet](https://github.com/Templetry/dotnet) | Parents: Express, Spring Boot and .NET minimal APIs |
+| [node](https://github.com/Templetry/node) · [jvm](https://github.com/Templetry/jvm) · [dotnet](https://github.com/Templetry/dotnet) | Parents: Express, Spring Boot, and .NET minimal APIs and Razor Pages |
 | [kmp](https://github.com/Templetry/kmp) · [android](https://github.com/Templetry/android) | Parents: Kotlin Multiplatform and Android native |
 | [meta](https://github.com/Templetry/meta) | Parent: the template that creates Templetry templates |
 | [pieces](https://github.com/Templetry/pieces) | Common pieces adoptable by any compatible project |
