@@ -17,7 +17,7 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 
 ## Status
 
-🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.10.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.7.1](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **25 forms and 14 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.10.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.8.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **25 forms and 14 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
 
 ## Getting started
 
