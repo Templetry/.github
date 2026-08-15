@@ -2,32 +2,54 @@
 
 # Templetry
 
-**Project scaffolding for every platform — delivered to any forge.**
+**Project scaffolding for every platform — delivered to any forge, and kept alive afterwards.**
 
-Templetry generates ready-to-work repositories from a library of multi-platform templates, and creates them on any git host — GitHub, GitLab, Gitea/Forgejo, or your own server — in seconds.
+Templetry generates ready-to-work repositories from a library of multi-platform templates, creates them on any git host — GitHub, GitLab, Gitea/Forgejo, or your own server — and lets those projects keep pulling template improvements and adopting new pieces long after they were created.
 
 > *Templetry* comes from **templet**, the original spelling of "template", which also named a real weaving tool: the piece that keeps the cloth's shape on the loom.
 
 ## What makes it different
 
-- **Templates compile.** Every template is a real project with its own CI — never a skeleton full of broken placeholders.
-- **The engine doesn't know what a framework is.** All framework knowledge lives in each template's `template.yml` manifest; adding a platform means writing a template, not engine code.
-- **Any forge.** `git push` is universal — Templetry creates your repo wherever you work, with a bring-your-own-remote fallback that covers every git host on the planet.
+- **Templates compile.** Every template is a real project whose CI renders *and builds* its output — never a skeleton full of broken placeholders. Defects surface in the template's CI, not in your project.
+- **The engine doesn't know what a framework is.** All framework knowledge lives in each template's `template.yml`. Eleven ecosystems in, the engine has never needed a framework-specific line.
+- **Projects stay alive.** Generated repositories record what made them, so they can pull template updates through a real three-way merge — and adopt **lazy pieces** (RBAC, audit trail, API keys, a whole CRUD entity) whenever you need them.
+- **Any forge.** Accounts for GitHub, GitLab and Gitea/Forgejo, plus a bring-your-own-remote fallback that covers every git host on the planet.
 
 ## Status
 
-🚀 **Shipped (August 2026).** Engine [v0.2.2](https://github.com/Templetry/engine/releases/latest) with binary releases for every platform · **Templetry Desktop** [v0.2.0](https://github.com/Templetry/desktop/releases/latest) · a CI-verified template catalog. The full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.7.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.5.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **21 forms and 12 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+
+## Getting started
+
+```sh
+scoop bucket add templetry https://github.com/Templetry/scoop-bucket && scoop install templetry
+# or grab a binary from the engine releases
+
+templetry list
+templetry init python/fastapi-users --out ./my-api --set "project_name=My Api"
+templetry add rbac ./my-api          # adopt a piece later
+templetry update ./my-api            # pull template improvements
+```
+
+Prefer a UI? [Templetry Desktop](https://github.com/Templetry/desktop/releases/latest) does all of it — plus browsing your repositories across forges.
+
+## The repos
 
 | Repo | What it is |
 |---|---|
-| [engine](https://github.com/Templetry/engine) | The core: a pure Go library + CLI that renders repositories from compilable templates |
+| [engine](https://github.com/Templetry/engine) | The core: pure Go library + `templetry` CLI + `templetry-mcp` server |
+| [desktop](https://github.com/Templetry/desktop) | Native app (Wails): create, browse, update and adopt pieces |
 | [catalog](https://github.com/Templetry/catalog) | The default template registry (`registry.json`) |
-| [kmp](https://github.com/Templetry/kmp) | Parent: Kotlin Multiplatform — forms `modular-features`, `single-module`, `modular-ui` |
-| [android](https://github.com/Templetry/android) | Parent: Android native — form `modular-features` (+ `single-module` planned) |
+| [web](https://github.com/Templetry/web) | Parent: React, Vue, Next.js and Svelte SPAs (+ pieces) |
+| [python](https://github.com/Templetry/python) | Parent: FastAPI services, a user-management API and Typer CLIs (+ industrial pieces) |
+| [go](https://github.com/Templetry/go) | Parent: CLI, HTTP service and a REST API over SQLite (+ pieces) |
+| [rust](https://github.com/Templetry/rust) | Parent: clap CLI and axum service |
+| [node](https://github.com/Templetry/node) · [jvm](https://github.com/Templetry/jvm) · [dotnet](https://github.com/Templetry/dotnet) | Parents: Express, Spring Boot and .NET minimal APIs |
+| [kmp](https://github.com/Templetry/kmp) · [android](https://github.com/Templetry/android) | Parents: Kotlin Multiplatform and Android native |
 | [meta](https://github.com/Templetry/meta) | Parent: the template that creates Templetry templates |
-| [desktop](https://github.com/Templetry/desktop) | Native desktop app: sign in with GitHub, browse the catalog, create, manage and update repos |
-| [wiki](https://github.com/Templetry/wiki) | Studies, ADRs, the normative `template.yml` spec and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
+| [scoop-bucket](https://github.com/Templetry/scoop-bucket) | Windows install: `scoop install templetry` |
+| [wiki](https://github.com/Templetry/wiki) | Studies, ADRs, normative specs and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
 
 ## Roadmap
 
-Shipped: engine + CLI → CI-verified templates (parents/forms/features) → desktop app with template updates (three-way merge) and auto-update. Next: `android/single-module`, engine `verify` in Docker, code signing, macOS/Linux desktop builds.
+Next: more industrial pieces (SCIM provisioning, OIDC login, multi-tenancy, outbox), a pieces panel in the desktop app, code signing and winget/Homebrew packaging.
