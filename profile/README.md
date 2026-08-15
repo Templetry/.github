@@ -17,7 +17,7 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 
 ## Status
 
-🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.7.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.5.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **21 forms and 12 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+🚀 **v1.0.0 and beyond (August 2026).** Engine [v1.9.0](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [v1.6.0](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **21 forms and 14 pieces across eleven ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
 
 ## Getting started
 
@@ -33,6 +33,8 @@ templetry update ./my-api            # pull template improvements
 
 Prefer a UI? [Templetry Desktop](https://github.com/Templetry/desktop/releases/latest) does all of it — plus browsing your repositories across forges.
 
+Full documentation: the wiki's [**usage guides**](https://github.com/Templetry/wiki/blob/main/guide/).
+
 ## The repos
 
 | Repo | What it is |
@@ -47,9 +49,11 @@ Prefer a UI? [Templetry Desktop](https://github.com/Templetry/desktop/releases/l
 | [node](https://github.com/Templetry/node) · [jvm](https://github.com/Templetry/jvm) · [dotnet](https://github.com/Templetry/dotnet) | Parents: Express, Spring Boot and .NET minimal APIs |
 | [kmp](https://github.com/Templetry/kmp) · [android](https://github.com/Templetry/android) | Parents: Kotlin Multiplatform and Android native |
 | [meta](https://github.com/Templetry/meta) | Parent: the template that creates Templetry templates |
+| [pieces](https://github.com/Templetry/pieces) | Common pieces adoptable by any compatible project |
 | [scoop-bucket](https://github.com/Templetry/scoop-bucket) | Windows install: `scoop install templetry` |
-| [wiki](https://github.com/Templetry/wiki) | Studies, ADRs, normative specs and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
+| [renovate-config](https://github.com/Templetry/renovate-config) | Shared Renovate preset — one dependency policy for every repo |
+| [wiki](https://github.com/Templetry/wiki) | [Usage guides](https://github.com/Templetry/wiki/blob/main/guide/), studies, ADRs, normative specs and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
 
 ## Roadmap
 
-Next: more industrial pieces (SCIM provisioning, OIDC login, multi-tenancy, outbox), a pieces panel in the desktop app, code signing and winget/Homebrew packaging.
+Next: more industrial pieces (SCIM provisioning, OIDC login, multi-tenancy, outbox), piece removal and `requires` between pieces in the engine, and a Homebrew tap.
