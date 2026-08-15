@@ -1,0 +1,63 @@
+name: Set up Templetry CLI
+description: >
+  Install the templetry CLI on the runner. The version every parent shares
+  lives in this file and nowhere else, so the catalog moves together.
+
+inputs:
+  version:
+    description: >
+      Release tag to install. Leave it unset to get the shared version —
+      overriding it is how a repository deliberately steps out of line.
+    required: false
+    default: ""
+
+outputs:
+  version:
+    description: The version actually installed.
+    value: ${{ steps.install.outputs.version }}
+
+runs:
+  using: composite
+  steps:
+    - id: install
+      shell: bash
+      env:
+        # Through the environment rather than direct interpolation, so an
+        # input can never become part of the script.
+        REQUESTED: ${{ inputs.version }}
+      run: |
+        set -euo pipefail
+
+        # The single source of truth for the catalog's engine version.
+        # Editing this line moves all ten parents at once, which is the
+        # whole reason this action exists.
+        # renovate: datasource=github-releases depName=Templetry/engine
+        SHARED_VERSION="v1.9.0"
+
+        version="${REQUESTED:-$SHARED_VERSION}"
+
+        case "$RUNNER_OS" in
+          Linux) os=linux ;;
+          macOS) os=darwin ;;
+          *) echo "::error::setup-templetry supports Linux and macOS runners, not $RUNNER_OS"; exit 1 ;;
+        esac
+        case "$RUNNER_ARCH" in
+          X64)   arch=amd64 ;;
+          ARM64) arch=arm64 ;;
+          *) echo "::error::setup-templetry has no build for $RUNNER_ARCH"; exit 1 ;;
+        esac
+
+        bin="$RUNNER_TEMP/templetry-bin"
+        mkdir -p "$bin"
+
+        # -f matters: without it an HTTP error is written to disk, marked
+        # executable, and kills a later step with a bare exit 127 instead of
+        # failing here with its status (journal, 2026-08-14).
+        curl -fsSL -o "$bin/templetry" \
+          "https://github.com/Templetry/engine/releases/download/$version/templetry-$os-$arch"
+        chmod +x "$bin/templetry"
+        echo "$bin" >> "$GITHUB_PATH"
+
+        # Proof it is the CLI and not merely a file that downloaded.
+        "$bin/templetry" version
+        echo "version=$version" >> "$GITHUB_OUTPUT"
