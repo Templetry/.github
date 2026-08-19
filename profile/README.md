@@ -22,8 +22,8 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 ## Getting started
 
 ```sh
-scoop bucket add templetry https://github.com/Templetry/scoop-bucket && scoop install templetry
-# or grab a binary from the engine releases
+brew install Templetry/tap/templetry                     # macOS, Linux
+scoop bucket add templetry https://github.com/Templetry/scoop-bucket && scoop install templetry   # Windows
 
 templetry list
 templetry init python/fastapi-users --out ./my-api --set "project_name=My Api"
@@ -50,6 +50,7 @@ Full documentation: the wiki's [**usage guides**](https://github.com/Templetry/w
 | [kmp](https://github.com/Templetry/kmp) · [android](https://github.com/Templetry/android) · [ios](https://github.com/Templetry/ios) | Parents: Kotlin Multiplatform, Android native and SwiftUI |
 | [meta](https://github.com/Templetry/meta) | Parent: the template that creates Templetry templates |
 | [pieces](https://github.com/Templetry/pieces) | Common pieces adoptable by any compatible project |
+| [homebrew-tap](https://github.com/Templetry/homebrew-tap) | macOS and Linux install: `brew install Templetry/tap/templetry` |
 | [scoop-bucket](https://github.com/Templetry/scoop-bucket) | Windows install: `scoop install templetry` |
 | [renovate-config](https://github.com/Templetry/renovate-config) | Shared Renovate preset — one dependency policy for every repo |
 | [wiki](https://github.com/Templetry/wiki) | [Usage guides](https://github.com/Templetry/wiki/blob/main/guide/), studies, ADRs, normative specs and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
