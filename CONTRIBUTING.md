@@ -76,7 +76,7 @@ If you are unsure whether something needs one, open an issue and ask. Being told
 ## Reporting things
 
 - **Bugs and proposals:** the issue templates on each repository.
-- **Questions and ideas:** [Discussions](https://github.com/orgs/Templetry/discussions).
+- **Questions and ideas:** [Discussions](https://github.com/Templetry/engine/discussions).
 - **Security:** never an issue — see [SECURITY.md](SECURITY.md).
 
 ## Licence
