@@ -54,6 +54,10 @@ Full documentation: the wiki's [**usage guides**](https://github.com/Templetry/w
 | [renovate-config](https://github.com/Templetry/renovate-config) | Shared Renovate preset — one dependency policy for every repo |
 | [wiki](https://github.com/Templetry/wiki) | [Usage guides](https://github.com/Templetry/wiki/blob/main/guide/), studies, ADRs, normative specs and the [brand guidelines](https://github.com/Templetry/wiki/blob/main/brand/guidelines.md) |
 
+## License
+
+The engine is **Apache License 2.0** — use it for anything, commercially included, with an explicit patent grant. Every other repository, templates and catalog among them, is **MIT**. Whatever you generate is yours: generated code is not a derivative work of the engine, so it carries whichever licence you give it.
+
 ## Roadmap
 
 Next: more industrial pieces (SCIM provisioning, OIDC login, multi-tenancy, outbox), piece removal and `requires` between pieces in the engine, and a Homebrew tap.
