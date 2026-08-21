@@ -1,0 +1,75 @@
+name: Check AGENTS.md
+description: Every form's AGENTS.md gives agents the same commands CI actually runs.
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        set -euo pipefail
+
+        # ADR-0003 says a template has to build. This is the same idea one
+        # level up: the commands AGENTS.md tells an agent to run must be the
+        # commands this project is actually verified with. An AGENTS.md that
+        # drifts does not fail loudly — it quietly sends every agent working
+        # in every generated project to run the wrong thing.
+        fail=0
+
+        for manifest in */template.yml; do
+          form=$(dirname "$manifest")
+          agents="$form/AGENTS.md"
+
+          if [ ! -f "$agents" ]; then
+            echo "::error file=$manifest::$form has no AGENTS.md"
+            fail=1
+            continue
+          fi
+
+          # The declared checks: the fenced block tagged templetry:checks.
+          declared=$(awk '
+            /^```sh templetry:checks$/ { inside = 1; next }
+            inside && /^```$/          { inside = 0; next }
+            inside                     { print }
+          ' "$agents" | sed 's/[[:space:]]*$//' | grep -v '^$' || true)
+
+          if [ -z "$declared" ]; then
+            echo "::error file=$agents::no templetry:checks block, so nothing states how an agent verifies its work"
+            fail=1
+            continue
+          fi
+
+          # What the manifest says CI runs. Forms that cannot be built in a
+          # Linux container declare no verify block; for those the block is
+          # required but cannot be compared, and the parent's CI carries the
+          # guarantee instead.
+          run=$(awk '
+            /^verify:/ { inside = 1; next }
+            inside && /^[^ ]/ { inside = 0 }
+            inside && /^  run:/ { sub(/^  run:[[:space:]]*/, ""); print; exit }
+          ' "$manifest" || true)
+
+          if [ -z "$run" ]; then
+            echo "  $form: $(echo "$declared" | wc -l) commands (no verify block to compare against)"
+            continue
+          fi
+
+          expected=$(printf '%s\n' "$run" | tr '&' '\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//' | grep -v '^$')
+
+          if [ "$declared" != "$expected" ]; then
+            echo "::error file=$agents::templetry:checks does not match the manifest's verify.run"
+            echo "--- AGENTS.md says"
+            printf '%s\n' "$declared"
+            echo "--- template.yml runs"
+            printf '%s\n' "$expected"
+            fail=1
+            continue
+          fi
+
+          echo "  $form: $(echo "$declared" | wc -l) commands, matching verify.run"
+        done
+
+        if [ "$fail" -ne 0 ]; then
+          echo "::error::AGENTS.md and the manifest disagree. An agent told to run the wrong command finds out slowly."
+          exit 1
+        fi
+        echo "AGENTS.md checks agree with the manifests."
