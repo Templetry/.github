@@ -1,0 +1,11 @@
+{
+  "accent": "#D9A441",
+  "icon_alt": {
+    "en": "Templetry logo: brass warp threads woven through a linen weft bar on a dark rounded square",
+    "es": "Logo de Templetry: hilos de urdimbre dorados entrelazados con una barra de trama color lino sobre un cuadrado redondeado oscuro"
+  },
+  "banner_alt": {
+    "en": "Templetry banner: the logo, the tagline \"Project scaffolding for every platform\" and the stack (Go, Wails, React, TypeScript, Kotlin Multiplatform)",
+    "es": "Banner de Templetry: el logo, el lema \"Scaffolding de proyectos para cualquier plataforma\" y el stack (Go, Wails, React, TypeScript, Kotlin Multiplatform)"
+  }
+}
