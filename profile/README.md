@@ -17,7 +17,7 @@ Templetry generates ready-to-work repositories from a library of multi-platform 
 
 ## Status
 
-🚀 **v1.0.0 and beyond (August 2026).** Engine [![engine release](https://img.shields.io/github/v/release/Templetry/engine?label=engine)](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [![desktop release](https://img.shields.io/github/v/release/Templetry/desktop?label=desktop)](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **26 forms and 14 pieces across twelve ecosystems**. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
+🚀 **v1.0.0 and beyond (August 2026).** Engine [![engine release](https://img.shields.io/github/v/release/Templetry/engine?label=engine)](https://github.com/Templetry/engine/releases/latest) (library + CLI + MCP server) · **Templetry Desktop** [![desktop release](https://img.shields.io/github/v/release/Templetry/desktop?label=desktop)](https://github.com/Templetry/desktop/releases/latest) for Windows, Linux and macOS · a CI-verified catalog of **29 forms across twelve ecosystems**, plus [common pieces](https://github.com/Templetry/pieces) any compatible project can adopt. The public API is stable under a written [compatibility policy](https://github.com/Templetry/wiki/blob/main/spec/compatibility.md); the full picture lives in the wiki's [state of the art](https://github.com/Templetry/wiki/blob/main/state-of-the-art.md).
 
 ## Getting started
 
