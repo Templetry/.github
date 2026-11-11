@@ -29,4 +29,5 @@ Every parent's Verify workflow installs the CLI before rendering. When each one 
 
 - **Linux and macOS**, x64 and arm64, resolved from `RUNNER_OS`/`RUNNER_ARCH`. An unsupported runner is an error naming what it saw, not a mysterious failure later.
 - The binary lands in a directory of its own under `RUNNER_TEMP` and that directory goes on `PATH` — no `sudo`, and nothing shadowing commands from a rendered project.
+- The binary is checked against the `SHA256SUMS` published with the same release before it is made executable; a missing entry or a mismatch fails the step. This catches corrupted or swapped downloads, but it is not a signature: whoever can publish the release can publish matching sums.
 - The download uses `curl -f`, and the action runs `templetry version` before finishing. Both exist because of a real failure: a 404 page once got written to disk, marked executable, and killed a later step with a bare `exit 127`.

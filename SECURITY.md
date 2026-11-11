@@ -4,7 +4,7 @@
 
 **Do not open a public issue.** Use GitHub's private vulnerability reporting on the affected repository: **Security → Report a vulnerability**. It goes only to the maintainers and stays private until there is a fix.
 
-If that is unavailable to you, email **sebssgarcia502580@gmail.com** with `[templetry-security]` in the subject.
+If that is unavailable to you, open a public issue that says only that you need a private channel for a security report, with **no details** of the problem, and a maintainer will arrange one.
 
 Expect a first reply within a week. A single maintainer runs this project — that number is what can honestly be promised, not what a template would say.
 
